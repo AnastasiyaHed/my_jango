@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Блог</title>
+</head>
+<body>
+    <h1>Блог</h1>
+    <ul>
+        {% for post in blog_posts %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

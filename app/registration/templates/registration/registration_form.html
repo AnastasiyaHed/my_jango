@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form for {{ event.title }}</h1>
+    <form method="post" action="{% url 'registration_form' event_id=event.id %}">
+        {% csrf_token %}
+        <!-- Поля формы -->
+        <label for="attendee_name">Name:</label>
+        <input type="text" name="attendee_name" required><br>
+
+        <label for="attendee_email">Email:</label>
+        <input type="email" name="attendee_email" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Users</title>
+</head>
+<body>
+    <h1>Все пользователи</h1>
+    <ul>
+        {% for user in users %}
+            <li><a href="{% url 'user_details' user.id %}">{{ user.attendee_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'user_details' user_id=1 %}">Данные пользователя</a>
+    <a href="{% url 'registration_form' event_id=1 %}">Регистрационная форма</a>
+
+</body>
+</html>
