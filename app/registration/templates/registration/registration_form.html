@@ -4,8 +4,8 @@
     <title>Registration Form</title>
 </head>
 <body>
-    <h1>Registration Form for {{ event.title }}</h1>
-    <form method="post" action="{% url 'registration_form' event_id=event.id %}">
+    <h1>Регистрационнная форма {{ event.title }}</h1>
+    <form method="post" action="{% url 'registration_form' %}">
         {% csrf_token %}
         <!-- Поля формы -->
         <label for="attendee_name">Name:</label>
@@ -14,6 +14,7 @@
         <label for="attendee_email">Email:</label>
         <input type="email" name="attendee_email" required><br>
 
+        {{ events }} <br>
         <input type="submit" value="Register">
     </form>
 </body>
